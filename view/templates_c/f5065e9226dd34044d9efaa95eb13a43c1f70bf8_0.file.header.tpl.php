@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 18:30:32
+/* Smarty version 3.1.32-dev-35, created on 2018-03-23 20:22:19
   from 'C:\xampp\htdocs\chemical\view\templates\template\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4c9389e8fc2_99195937',
+  'unifunc' => 'content_5ab4e36b281199_72680874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f5065e9226dd34044d9efaa95eb13a43c1f70bf8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\template\\header.tpl',
-      1 => 1521797430,
+      1 => 1521804132,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ab4c9389e8fc2_99195937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ab4e36b281199_72680874 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,6 +39,10 @@ function content_5ab4c9389e8fc2_99195937 (Smarty_Internal_Template $_smarty_tpl)
 >
   <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
+js/uikit.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 js/modal.js"><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
@@ -49,16 +53,14 @@ js/bottombar.js"><?php echo '</script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 js/loader.js"><?php echo '</script'; ?>
 >
-  <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
-js/uikit.min.js"><?php echo '</script'; ?>
->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
+css/uikit.min.css">
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 css/style.css">
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 css/animate.css">
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
-css/uikit.min.css">
+css/selection.css">
 </head>
 <body>
   <article>

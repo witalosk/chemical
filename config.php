@@ -26,7 +26,7 @@ define("DBNAME", "chemical");
 define("DBUSER", "root");
 define("DBPASS", "");
 
-define( 'OAUTH_CALLBACK', 'http://localhost/user/callback' );
+define( 'ITEM_NUM', 55);
 
 //error
 error_reporting(E_ALL);

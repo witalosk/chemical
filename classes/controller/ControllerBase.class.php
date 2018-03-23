@@ -42,7 +42,7 @@ abstract class ControllerBase
       $this->view->assign('meta', $this->meta);
 
       //ログイン中なら情報を計算
-      if (null != $_SESSION[UserController::LOGINUSER]) {
+      if (isset($_SESSION[UserController::LOGINUSER])) {
         $this->view->assign('info', $this->calcInfo());
       }
 

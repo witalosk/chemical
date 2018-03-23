@@ -2,6 +2,7 @@
 namespace app\model;
 
 use app\dao\UserDao;
+use app\dao\MessageDao;
 /**
 * UserMode クラス
 * @brief ユーザモデル
@@ -71,6 +72,15 @@ final class UserModel
     {
         $dao = UserDao::getDaoFromMailAddress($mailAddress);
         return (isset($dao[0])) ? $this->setProperty(reset($dao)) : null;
+    }
+
+    /**
+     * 現在のモデルあてのメッセージを取得するメソッド
+     * @return array
+     */
+    public function getMessage()
+    {
+      return MessageDao::getDaoFromUserId($this->id);
     }
 
     /**

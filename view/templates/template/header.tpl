@@ -9,13 +9,14 @@
   <script src="http://html5shiv.googlecode.com/svn/trnk/html5.js"></script>
   <![endif]-->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{$WEB}js/uikit.min.js"></script>
   <script type="text/javascript" src="{$WEB}js/modal.js"></script>
   <script type="text/javascript" src="{$WEB}js/bottombar.js"></script>
   <script type="text/javascript" src="{$WEB}js/loader.js"></script>
-  <script type="text/javascript" src="{$WEB}js/uikit.min.js"></script>
+  <link rel="stylesheet" href="{$WEB}css/uikit.min.css">
   <link rel="stylesheet" href="{$WEB}css/style.css">
   <link rel="stylesheet" href="{$WEB}css/animate.css">
-  <link rel="stylesheet" href="{$WEB}css/uikit.min.css">
+  <link rel="stylesheet" href="{$WEB}css/selection.css">
 </head>
 <body>
   <article>

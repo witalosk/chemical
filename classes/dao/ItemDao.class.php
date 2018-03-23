@@ -21,4 +21,17 @@ class ItemDao
     return Db::select($sql, $arr);
   }
 
+  /**
+   * ItemテーブルをItemIdから検索
+   * @var int
+   * @return array
+   */
+  static public function getDaoFromItemId($id)
+  {
+    $sql = 'SELECT * FROM item WHERE itemId=:id';
+    $arr[':id'] = $id;
+
+    return Db::select($sql, $arr);
+  }
+
 }

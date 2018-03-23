@@ -12,9 +12,9 @@
 }
 
 body{
-	background-color: #000;
+	background-color: #c0dda7;
 	background-image: url("../img/bg2.png");
-	background-repeat:repeat-y;
+	background-repeat:repeat;
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -31,6 +31,7 @@ body{
 html {
 	width: 100vw;
 	height: 100vh;
+	background-color: #c0dda7;
 }
 
 /*PC向け表示*/
@@ -39,7 +40,6 @@ html {
 		width: 700px;
 		margin: 0 auto;
 	}
-
 }
 
 .hidden{
@@ -235,9 +235,17 @@ select{
 div.item{
 	position: relative;
 	display: inline-block;
-	width: 21%;
+	width: 21.5%;
 	padding: 1%;
 }
+
+/*PC向け表示*/
+@media (min-width: 700px) and (orientation: landscape) {
+	div.item {
+		width: 9.5%;
+	}
+}
+
 div.itemBox{
 	position: fixed;
 	top: 180px;
@@ -256,11 +264,23 @@ div.itemBox{
 div.itemNumber{
 	position: absolute;
 	font-size: 4vw;
-	bottom: 26%;
-	left: 2%;
+	bottom: 20%;
+	left: 6.5%;
 	width: 2em;
 	text-align: center;
 	color: black;
+}
+/*PC向け表示*/
+@media (min-width: 700px) and (orientation: landscape) {
+	div.itemNumber{
+		position: absolute;
+		font-size: 2vw;
+		bottom: 21.5%;
+		left: 9%;
+		width: 2em;
+		text-align: center;
+		color: black;
+	}
 }
 
 div.itemInfo{
@@ -401,7 +421,7 @@ div.scbox{
 	color: white;
 	background-color: rgba(0, 0, 0, 0.3);
 	overflow-y: scroll;
-	height: 50vh;
+	height: 250px;
 }
 /*normalbox*/
 div.nbox{

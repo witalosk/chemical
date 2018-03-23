@@ -5,13 +5,11 @@ namespace app\controller;
 use \app\model\UserModel;
 use \app\dao\UserDao;
 use \app\model\GimonModel;
-use \app\dao\GimonDao;
-use \app\controller\GimonController;
+use \app\dao\MessageDao;
 use \app\common\Db;
 use \app\common\InvalidErrorException;
 use \app\common\ExceptionCode;
 use \app\common\Request;
-use Abraham\TwitterOAuth\TwitterOAuth;
 
 
 /**
@@ -25,47 +23,13 @@ class UserController extends ControllerBase
 
   public function infoAction()
   {
-    
-  }
+    $objUm = new UserModel;
+    $objUm = $this::getLoginUser();
 
-  /**
-  * ブロック処理
-  */
-  public function blockAction()
-  {
-    //ログインチェック
-    $this::checkLogin();
+    //メッセージを取得
+    $msgs = $objUm->getMessage();
 
-    //postを受け取り
-    $posts = $this->request->getPost();
-
-    if(null == $posts['id']) {
-      throw new InvalidErrorException(ExceptionCode::INVALID_URL);
-    }
-
-    $objUm = new UserModel(); //ユーザモデル
-    $objUm = UserController::getLoginUser();
-
-    //ぎもんIDからIPアドレスを検索
-    $objGm = new GimonModel();
-    $objGm->getModelById($posts['id']);
-
-    //ブロックリストを配列に
-    $blocklist = explode(';',$objUm->blocklist);
-    //ブロックリストに追加
-    array_push($blocklist, $objGm->ipaddress);
-
-    $strblocklist = implode(';', $blocklist);
-    $objUm->blocklist = $strblocklist;
-    $objUm->updated_at = date('Y/m/d H:i:s');
-
-    //DBを更新
-    Db::transaction();
-    $objUm->save();
-    Db::commit();
-
-    $_SESSION[self::LOGINUSER] = $objUm;
-    $this->view->assign('back', WEB_URL.'user/main');
+    $this->view->assign('msgs', $msgs);
   }
 
   /**
