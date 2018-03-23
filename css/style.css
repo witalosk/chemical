@@ -13,8 +13,8 @@
 
 body{
 	background-color: #000;
-  background-image: url("../img/bg2.png");
-  background-repeat: no-repeat;
+	background-image: url("../img/bg2.png");
+	background-repeat:repeat-y;
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -24,6 +24,22 @@ body{
 	text-align: center;
 	color: #000;
 	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+/*PC向け表示*/
+@media (min-width: 700px) and (orientation: landscape) {
+	article {
+		width: 700px;
+		margin: 0 auto;
+	}
+
 }
 
 .hidden{
@@ -275,95 +291,95 @@ div.inlineblock{
 
 /*topbar*/
 div.topbar {
-  background: white;
-  position: fixed;
-  top:10px;
-  right: 10px;
-  left: 10px;
-  height: 40px;
-  border-style: solid;
-  border-color: rgba(236, 236, 236, 0.5);
-  border-width: medium;
-  border-radius: 5px;
-  text-align: left;
-  padding: 5px;
+	background: white;
+	position: fixed;
+	top:10px;
+	right: 10px;
+	left: 10px;
+	height: 40px;
+	border-style: solid;
+	border-color: rgba(236, 236, 236, 0.5);
+	border-width: medium;
+	border-radius: 5px;
+	text-align: left;
+	padding: 5px;
 	z-index: 2;
 }
 div.level {
-  display: inline-block;
-  position: absolute;
+	display: inline-block;
+	position: absolute;
 	font-family: 'Open Sans', sans-serif;
-  top:5px;
-  left:5px;
-  bottom: 5px;
-  background-color: rgb(0, 165, 209);
-  border-radius: 5px;
-  width: 30px;
-  height:30px;
-  padding: 5px;
-  text-align: center;
-  font-size: 120%;
-  color: white;
+	top:5px;
+	left:5px;
+	bottom: 5px;
+	background-color: rgb(0, 165, 209);
+	border-radius: 5px;
+	width: 30px;
+	height:30px;
+	padding: 5px;
+	text-align: center;
+	font-size: 120%;
+	color: white;
 }
 div.exp {
-  display: inline-block;
-  position: absolute;
-  left: 39px;
-  background-color: rgb(0, 165, 209);
-  border-bottom-right-radius: 5px;
-  padding:5px;
-  width: 50px;
-  height:10px;
-  text-align: right;
-  font-size: 35%;
-  color: white;
+	display: inline-block;
+	position: absolute;
+	left: 39px;
+	background-color: rgb(0, 165, 209);
+	border-bottom-right-radius: 5px;
+	padding:5px;
+	width: 50px;
+	height:10px;
+	text-align: right;
+	font-size: 35%;
+	color: white;
 }
 div.rank{
-    position: absolute;
-    left:50px;
-    bottom:5px;
-    font-size: 75%;
+	position: absolute;
+	left:50px;
+	bottom:5px;
+	font-size: 75%;
 }
 div.coin{
-  position: absolute;
-  right:5px;
-  top:3px;
-  padding-left: 30px;
-  background-color: white;
-  background-image: url("../img/coin.png");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  border-bottom-style: solid;
-  border-color: rgb(250, 255, 20);
-  font-size: 80%;
+	position: absolute;
+	right:5px;
+	top:3px;
+	padding-left: 30px;
+	background-color: white;
+	background-image: url("../img/coin.png");
+	background-size: 40%;
+	background-repeat: no-repeat;
+	border-bottom-style: solid;
+	border-color: rgb(250, 255, 20);
+	font-size: 80%;
 }
 div.mol{
-  position: absolute;
-  right:5px;
-  bottom:3px;
-  padding-left: 19px;
-  background-color: white;
-  background-image: url("../img/mol.png");
-  background-size: 35%;
-  background-repeat: no-repeat;
-  border-bottom-style: solid;
-  border-color: rgb(255, 87, 70);
-  font-size: 80%;
+	position: absolute;
+	right:5px;
+	bottom:3px;
+	padding-left: 19px;
+	background-color: white;
+	background-image: url("../img/mol.png");
+	background-size: 35%;
+	background-repeat: no-repeat;
+	border-bottom-style: solid;
+	border-color: rgb(255, 87, 70);
+	font-size: 80%;
 }
 
 /*bottombar*/
 div.bottombar {
-  background: rgba(245,245,245,0.9);
-  position: fixed;
-  bottom:0px;
-  right: 0px;
-  left: 0px;
-  height: 40px;
-  border-top-style: solid;
-  border-color: rgba(116, 116, 116,0.5);
-  border-width: thin;
-  text-align: center;
-  padding: 5px;
+	background: rgba(245,245,245,0.9);
+	position: fixed;
+	bottom:0px;
+	right: 0px;
+	left: 0px;
+	height: 40px;
+	border-top-style: solid;
+	border-color: rgba(116, 116, 116,0.5);
+	border-width: thin;
+	text-align: center;
+	padding: 5px;
 	z-index: 10;
 }
 div.bottomitem {
@@ -424,6 +440,7 @@ div.modalclose{
 	text-align: center;
 	font-size: 125%;
 	background-color: rgb(255, 128, 128);
+	cursor: pointer;
 }
 div.window{
 	position: fixed;
@@ -444,58 +461,58 @@ div.window{
 
 /*loader*/
 #loader-bg {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  background: #000;
-  z-index: 20;
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #000;
+	z-index: 20;
 }
 #loader {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
-  text-align: center;
-  color: #fff;
-  z-index: 21;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	text-align: center;
+	color: #fff;
+	z-index: 21;
 }
 
 /*star*/
 .star {
-			position: absolute;
-      background: url(https://dl.dropbox.com/u/1488103/julie-logo-sparkle.png) no-repeat;
-      background-size: contain;
-      overflow: hidden;
-			&.star-1 {
-				width: 50px;
-				height: 34px;
-				top:110px;
-				left:97px;
-			}
-			&.star-2 {
-				width: 83px;
-				height: 77px;
-				top:18px;
-				left:224px;
+	position: absolute;
+	background: url(https://dl.dropbox.com/u/1488103/julie-logo-sparkle.png) no-repeat;
+	background-size: contain;
+	overflow: hidden;
+	&.star-1 {
+		width: 50px;
+		height: 34px;
+		top:110px;
+		left:97px;
+	}
+	&.star-2 {
+		width: 83px;
+		height: 77px;
+		top:18px;
+		left:224px;
 
-			}
-			&.star-3 {
-				width: 74px;
-				height: 70px;
-				top:115px;
-				left:172px;
-			}
-			&.star-4 {
-				width: 68px;
-				height: 70px;
-				top:46px;
-				left:162px;
-			}
+	}
+	&.star-3 {
+		width: 74px;
+		height: 70px;
+		top:115px;
+		left:172px;
+	}
+	&.star-4 {
+		width: 68px;
+		height: 70px;
+		top:46px;
+		left:162px;
+	}
 }

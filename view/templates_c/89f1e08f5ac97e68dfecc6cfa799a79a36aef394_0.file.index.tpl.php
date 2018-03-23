@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.32-dev-35, created on 2018-03-23 15:39:12
+  from 'C:\xampp\htdocs\chemical\view\templates\index\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32-dev-35',
+  'unifunc' => 'content_5ab4a1104d4544_07375456',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '89f1e08f5ac97e68dfecc6cfa799a79a36aef394' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\index\\index.tpl',
+      1 => 1521787150,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ab4a1104d4544_07375456 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +30,25 @@
   <meta name="format-detection" content="telephone=no">
   <title>Chemiquest</title>
   <!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trnk/html5.js"></script>
+  <?php echo '<script'; ?>
+ src="http://html5shiv.googlecode.com/svn/trnk/html5.js"><?php echo '</script'; ?>
+>
   <![endif]-->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/modal.js"></script>
-  <script type="text/javascript" src="js/bottombar.js"></script>
-  <script type="text/javascript" src="js/loader.js"></script>
-  <script type="text/javascript" src="js/uikit.min.js"></script>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="js/modal.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="js/bottombar.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="js/loader.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="js/uikit.min.js"><?php echo '</script'; ?>
+>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/uikit.min.css">
@@ -51,3 +87,5 @@
   </article>
 </body>
 </html>
+<?php }
+}
