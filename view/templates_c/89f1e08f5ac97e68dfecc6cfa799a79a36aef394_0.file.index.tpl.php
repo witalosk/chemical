@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 15:39:12
+/* Smarty version 3.1.32-dev-35, created on 2018-03-23 17:53:34
   from 'C:\xampp\htdocs\chemical\view\templates\index\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4a1104d4544_07375456',
+  'unifunc' => 'content_5ab4c08e617fa8_76127911',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '89f1e08f5ac97e68dfecc6cfa799a79a36aef394' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\index\\index.tpl',
-      1 => 1521787150,
+      1 => 1521791379,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ab4a1104d4544_07375456 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ab4c08e617fa8_76127911 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@ function content_5ab4a1104d4544_07375456 (Smarty_Internal_Template $_smarty_tpl)
 >
   <![endif]-->
   <?php echo '<script'; ?>
- type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><?php echo '</script'; ?>
+ type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
  type="text/javascript" src="js/modal.js"><?php echo '</script'; ?>
@@ -66,7 +66,7 @@ function content_5ab4a1104d4544_07375456 (Smarty_Internal_Template $_smarty_tpl)
         <div id="close" class="modalclose">✕</div>
         ログイン
       </div>
-      <form id="loginForm" name="loginForm" action="login.php" method="POST">
+      <form id="loginForm" name="loginForm" action="" method="POST">
         <p class="frale">メールアドレス</p>
         <p><input class="text" type="text" name="mail" required></p>
         <p class="frale">パスワード</p>

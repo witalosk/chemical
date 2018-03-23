@@ -1,6 +1,3 @@
-  </main>
-</div>
-</div>
-
+  </article>
 </body>
 </html>

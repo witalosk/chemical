@@ -23,88 +23,9 @@ class UserController extends ControllerBase
   //!セッション保存用の名前
   const LOGINUSER = 'lum';
 
-  /**
-  * メインアクション
-  */
-  public function mainAction()
+  public function infoAction()
   {
-    //ログインチェック
-    $this::checkLogin();
-
-    $objUm = new UserModel;
-    $objUm = UserController::getLoginUser();
-
-    //セッションに入れておいたさっきの配列
-    $access_token = $_SESSION['access_token'];
-
-    //OAuthトークンとシークレットも使って TwitterOAuth をインスタンス化
-    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-
-    //ユーザー情報をGET
-    $user = $connection->get("account/verify_credentials");
-    $this->view->assign('username', $user->name);
-
-    //ブロックリストを取得
-    $blocklist = explode(';',$objUm->blocklist);
-
-
-    //疑問一覧を取得
-    $gimons = GimonDao::getDaoFromDestinationId($user->id);
-    //悪意のある言葉チェック & ブロックチェック
-    foreach ($gimons as $key => $gimon) {
-      if(!in_array($gimon['ipaddress'], $blocklist)){
-        $score = GimonController::checkBadWords($gimon['text']);
-        if($score >= 10) {
-          $gimons[$key]['text'] =
-          '<p class="uk-label uk-label-danger">This may contain very malicious words.<br>強い悪意のある言葉が含まれる可能性</p>
-          <button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #text'.$key.'">SHOW / 表示</button>
-          <p hidden id="text'.$key.'">'.$gimons[$key]['text'].'</p>';
-        }
-        else if($score >= 5) {
-          $gimons[$key]['text'] =
-          '<p class="uk-label uk-label-warning">This may contain malicious words.<br>悪意のある言葉が含まれる可能性</p>
-          <button class="uk-button uk-button-default uk-button-small" type="button" uk-toggle="target: #text'.$key.'">SHOW / 表示</button>
-          <p hidden id="text'.$key.'">'.$gimons[$key]['text'].'</p>';
-        }
-
-        //answerをタグに変更
-        if(null != $gimon['answer']) {
-          $gimons[$key]['answer'] = '<p class="uk-label uk-label-default">Answered</p>';
-        }
-      }
-      else {
-        unset($gimons[$key]);
-      }
-    }
-
-    $this->view->assign('url', WEB_URL.'gimon/add/'.$user->screen_name);
-    $this->view->assign('gimons', $gimons);
-
-    $script = "";
-
-    //POSTされていたらツイートする
-    if(null != $_POST) {
-      //POSTを取得
-      $posts = $this->request->getPost();
-
-      $access_token = $_SESSION['access_token'];
-      $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-
-      $result = $connection->post(
-        "statuses/update",
-        array("status" => $posts['text'])
-      );
-
-      if($connection->getLastHttpCode() == 200) {
-        // ツイート成功
-        $script = "UIkit.notification('tweeted!', 'success');";
-      } else {
-        // ツイート失敗
-        $script = "UIkit.notification('tweet failed...', 'error');";
-      }
-    }
-    $this->view->assign('screen_name', $user->screen_name);
-    $this->view->assign('script', $script);
+    
   }
 
   /**
@@ -145,26 +66,6 @@ class UserController extends ControllerBase
 
     $_SESSION[self::LOGINUSER] = $objUm;
     $this->view->assign('back', WEB_URL.'user/main');
-  }
-
-  /**
-  * コールバック
-  */
-  public function callbackAction()
-  {
-    $request_token = [];
-    $request_token['oauth_token'] = $_SESSION['oauth_token'];
-    $request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
-
-    //Twitterから返されたOAuthトークンと、あらかじめlogin.phpで入れておいたセッション上のものと一致するかをチェック
-    if (isset($_REQUEST['oauth_token']) && $request_token['oauth_token'] !== $_REQUEST['oauth_token']) {
-      die( 'Error!' );
-    }
-
-    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
-    $_SESSION['access_token'] = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
-
-    header( 'location: '.WEB_URL.'user/update' );
   }
 
   /**
@@ -210,24 +111,6 @@ class UserController extends ControllerBase
     header( 'location: '.WEB_URL.'user/main' );
   }
 
-  /**
-  * ログインする
-  *
-  * @return void
-  */
-  public function loginAction()
-  {
-
-    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
-    $request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
-
-    $_SESSION['oauth_token'] = $request_token['oauth_token'];
-    $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
-    $url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
-
-    //Twitter.com の認証画面へリダイレクト
-    header( 'location: '. $url );
-  }
 
   /**
   * ログイン状態かどうかをチェックする
@@ -263,6 +146,26 @@ class UserController extends ControllerBase
   static public function getLoginUser()
   {
     return $_SESSION[self::LOGINUSER];
+  }
+
+  /**
+   * ログイン処理
+   *
+   * @return bool
+   */
+  static public function login($mailAddress, $password)
+  {
+    $objUm = new UserModel;
+    $objUm->getModelByMailAddress($mailAddress);
+
+    //データが見つからなかったり、パスワードが不一致の場合false
+    if (null == $objUm->id || !password_verify($password, $objUm->password)) {
+      return false;
+    }
+
+    //見つかった場合、セッションに保存
+    $_SESSION[self::LOGINUSER] = $objUm;
+    return true;
   }
 
   /**

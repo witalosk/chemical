@@ -8,7 +8,7 @@
   <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trnk/html5.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/modal.js"></script>
   <script type="text/javascript" src="js/bottombar.js"></script>
   <script type="text/javascript" src="js/loader.js"></script>
@@ -30,7 +30,7 @@
         <div id="close" class="modalclose">✕</div>
         ログイン
       </div>
-      <form id="loginForm" name="loginForm" action="login.php" method="POST">
+      <form id="loginForm" name="loginForm" action="" method="POST">
         <p class="frale">メールアドレス</p>
         <p><input class="text" type="text" name="mail" required></p>
         <p class="frale">パスワード</p>

@@ -22,7 +22,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 //database
 define("DSN", "mysql:dbname=%s;host=localhost;charset=utf8");
-define("DBNAME", "gimon");
+define("DBNAME", "chemical");
 define("DBUSER", "root");
 define("DBPASS", "");
 

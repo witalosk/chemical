@@ -1,6 +1,6 @@
 <?php
 $omiya = "大宮";
-$naoko = "直子"
+$naoko = "直子";
 if(isset($_POST["toggle"])){
   $omiya = $_POST["toggle"];
 }

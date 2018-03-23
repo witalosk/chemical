@@ -63,13 +63,13 @@ final class UserModel
     }
 
     /**
-    * passwordからユーザモデルを検索するメソッド
+    * mailAddressからユーザモデルを検索するメソッド
     * @param string $id
     * @return \app\model\UserModel
     */
-    public function getModelByScreenName($id)
+    public function getModelByMailAddress($mailAddress)
     {
-        $dao = UserDao::getDaoFromScreenName($id);
+        $dao = UserDao::getDaoFromMailAddress($mailAddress);
         return (isset($dao[0])) ? $this->setProperty(reset($dao)) : null;
     }
 

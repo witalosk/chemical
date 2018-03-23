@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 18:30:32
+/* Smarty version 3.1.32-dev-35, created on 2018-03-23 17:41:14
   from 'C:\xampp\htdocs\chemical\view\templates\template\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4c9389e8fc2_99195937',
+  'unifunc' => 'content_5ab4bdaa2bf1e3_16478112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f5065e9226dd34044d9efaa95eb13a43c1f70bf8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\template\\header.tpl',
-      1 => 1521797430,
+      1 => 1521791360,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ab4c9389e8fc2_99195937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ab4bdaa2bf1e3_16478112 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,25 +64,25 @@ css/uikit.min.css">
   <article>
     <div class="topbar">
       <div class="level frale">
-        <?php echo $_smarty_tpl->tpl_vars['info']->value['percentage'];?>
+        <?php echo $_smarty_tpl->tpl_vars['percentage']->value;?>
 <span class="fsize50">%</span>
       </div>
       <div class="exp frale">
-        <?php echo $_smarty_tpl->tpl_vars['info']->value['zukan'];?>
-/<?php echo $_smarty_tpl->tpl_vars['info']->value['i'];?>
+        <?php echo $_smarty_tpl->tpl_vars['zukan']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
 
       </div>
       <div class="rank">
-        <?php echo $_smarty_tpl->tpl_vars['info']->value['classtext'];?>
-：<?php echo $_smarty_tpl->tpl_vars['info']->value['nickName'];?>
+        <?php echo $_smarty_tpl->tpl_vars['classtext']->value;?>
+：<?php echo $_smarty_tpl->tpl_vars['row']->value["nickName"];?>
 
       </div>
       <div class="coin frale">
-        <?php echo $_smarty_tpl->tpl_vars['info']->value['coin'];?>
+        <?php echo $_smarty_tpl->tpl_vars['row']->value["coin"];?>
 
       </div>
       <div class="mol frale">
-        <?php echo $_smarty_tpl->tpl_vars['info']->value['sum'];?>
+        <?php echo $_smarty_tpl->tpl_vars['sum']->value;?>
 
       </div>
     </div>
