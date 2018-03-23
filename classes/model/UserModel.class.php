@@ -9,11 +9,14 @@ use app\dao\UserDao;
 final class UserModel
 {
     public $id = null;
-    public $name = null;
-    public $screen_name = null;
-    public $blocklist = null;
-    public $created_at = null;
-    public $updated_at = null;
+    public $mailAddress = null;
+    public $password = null;
+    public $nickName = null;
+    public $coin = null;
+    public $level = null;
+    public $exp = null;
+    public $loginTimes = null;
+    public $lastLogin = null;
 
     /**
     * コンストラクタ
@@ -36,11 +39,14 @@ final class UserModel
     public function setProperty($array)
     {
         $this->id = $array['id'];
-        $this->name = $array['name'];
-        $this->screen_name = $array['screen_name'];
-        $this->blocklist = $array['blocklist'];
-        $this->created_at = $array['created_at'];
-        $this->updated_at = $array['updated_at'];
+        $this->mailAddress = $array['mailAddress'];
+        $this->password = $array['password'];
+        $this->nickName = $array['nickName'];
+        $this->coin = $array['coin'];
+        $this->level = $array['level'];
+        $this->exp = $array['exp'];
+        $this->loginTimes = $array['loginTimes'];
+        $this->lastLogin = $array['lastLogin'];
 
         return $this;
     }
@@ -57,7 +63,7 @@ final class UserModel
     }
 
     /**
-    * screen_nameからユーザモデルを検索するメソッド
+    * passwordからユーザモデルを検索するメソッド
     * @param string $id
     * @return \app\model\UserModel
     */

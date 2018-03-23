@@ -31,19 +31,19 @@ class UserDao
         return $res;
     }
     /**
-    * ScreenNameから配列を取得する
+    * mailAddressから配列を取得する
     * @param int $userId
     * @return array
     */
-    public static function getDaoFromScreenName($sn)
+    public static function getDaoFromMailAddress($mailAddress)
     {
         $sql = "SELECT ";
         $sql .= " * ";
         $sql .= "FROM `user` ";
-        $sql .= "WHERE `screen_name` = :sn ";
+        $sql .= "WHERE `mailAddress` = :mailAddress ";
 
         $arr = array();
-        $arr[':sn'] = $sn;
+        $arr[':mailAddress'] = $mailAddress;
 
         $res = Db::select($sql, $arr);
         return $res;
@@ -57,19 +57,25 @@ class UserDao
     public static function save(UserModel $objUM)
     {
         $sql = "UPDATE `user` SET ";
-        $sql .= "`name`= :name, ";
-        $sql .= "`screen_name`= :screen_name, ";
-        $sql .= "`blocklist`= :blocklist, ";
-        $sql .= "`created_at`= :created_at, ";
-        $sql .= "`updated_at`= :updated_at ";
+        $sql .= "`mailAddress`= :mailAddress, ";
+        $sql .= "`password`= :password, ";
+        $sql .= "`nickName`= :nickName, ";
+        $sql .= "`coin`= :coin, ";
+        $sql .= "`level`= :level ";
+        $sql .= "`exp`= :exp ";
+        $sql .= "`loginTimes`= :loginTimes ";
+        $sql .= "`lastLogin`= :lastLogin ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();
-        $arr[':name'] = $objUM->name;
-        $arr[':screen_name'] = $objUM->screen_name;
-        $arr[':blocklist'] = $objUM->blocklist;
-        $arr[':created_at'] = $objUM->created_at;
-        $arr[':updated_at'] = $objUM->updated_at;
+        $arr[':mailAddress'] = $objUM->mailAddress;
+        $arr[':password'] = $objUM->password;
+        $arr[':nickName'] = $objUM->nickName;
+        $arr[':coin'] = $objUM->coin;
+        $arr[':level'] = $objUM->level;
+        $arr[':exp'] = $objUM->exp;
+        $arr[':loginTimes'] = $objUM->loginTimes;
+        $arr[':lastLogin'] = $objUM->lastLogin;
         $arr[':id'] = $objUM->id;
 
         return Db::update($sql, $arr);
@@ -83,20 +89,26 @@ class UserDao
     {
         $sql = "INSERT INTO `user` VALUES (";
         $sql .= ":id ";
-        $sql .= ", :name ";
-        $sql .= ", :screen_name ";
-        $sql .= ", :blocklist ";
-        $sql .= ", :created_at ";
-        $sql .= ", :updated_at ";
+        $sql .= ", :mailAddress ";
+        $sql .= ", :password ";
+        $sql .= ", :nickName ";
+        $sql .= ", :coin ";
+        $sql .= ", :level ";
+        $sql .= ", :exp ";
+        $sql .= ", :loginTimes ";
+        $sql .= ", :lastLogin ";
         $sql .= ")";
 
         $arr = array();
         $arr[':id'] = $objUM->id;
-        $arr[':name'] = $objUM->name;
-        $arr[':screen_name'] = $objUM->screen_name;
-        $arr[':blocklist'] = $objUM->blocklist;
-        $arr[':created_at'] = $objUM->created_at;
-        $arr[':updated_at'] = $objUM->updated_at;
+        $arr[':mailAddress'] = $objUM->mailAddress;
+        $arr[':password'] = $objUM->password;
+        $arr[':nickName'] = $objUM->nickName;
+        $arr[':coin'] = $objUM->coin;
+        $arr[':level'] = $objUM->level;
+        $arr[':exp'] = $objUM->exp;
+        $arr[':loginTimes'] = $objUM->loginTimes;
+        $arr[':lastLogin'] = $objUM->lastLogin;
 
         return Db::insert($sql, $arr);
     }
