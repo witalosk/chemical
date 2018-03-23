@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AjaxとJSONのテスト</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript">
+  <!--
+  $(function(){
+    $("#load").click(function(){
+      var json={
+        "toggle": $("toggle").val(),
+        "toggle2": $("toggle2").val()
+      };
+      $("#raw").text(json);
+      $.ajax({
+        type: "post",
+        data: json,
+        dataType: "json",
+        url: "json.php",
+        success: function(data){
+          $("#area table").remove();
+          person = data.person;
+          var theTable = $("<table>");
+          for(i = 0; i < person.length; i++){
+            theTable.append("<tr><td>"
+            + person[i].name + "</td>"
+            +"<td>" + person[i].tel + "</td>"
+            +"<td>" + person[i].mail+ "</td></tr>");
+          }
+          theTable.appendTo("#area");
+        }
+      });
+    });
+  });
+  //-->
+  </script>
+</head>
+<body>
+  <header>
+    <h1>AjaxとJSONのテスト</h1>
+  </header>
+  <article>
+    <form name="test" onsubmit="return false;" id="test">
+      <p>
+        <input type="text" name="toggle" id="toggle" value="大宮">
+        <input type="text" name="toggle2" id="toggle2" value="なおこ">
+      </p>
+      <p>
+        <input type="button" value="JSONファイルのロード" id="load">
+      </p>
+    </form>
+    <div id="raw">
+    </div>
+    <div id="area">
+    </div>
+  </article>
+</body>
+</html>

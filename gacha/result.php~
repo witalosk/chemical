@@ -1,0 +1,64 @@
+<?php
+require __DIR__."/../parts/sqlready.php";
+require __DIR__."/../parts/menus.php";
+$rareValue = $_POST["res"];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Chemiquest</title>
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trnk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/modal.js"></script>
+  <script type="text/javascript" src="../js/loader.js"></script>
+  <script typr="text/javascript">
+  <!--
+  rareValue = <?=$rareValue?>;
+  $(function(){
+    if (rareValue==5) {
+      $("body").css('background-image','url("../img/gachabg/ssrare.jpg")');
+    }else if (rareValue==4) {
+      rareValue = 4;
+      $("body").css('background-image','url("../img/gachabg/srare.jpg")');
+    }else if (rareValue==3) {
+      rareValue = 3;
+      $("body").css('background-image','url("../img/gachabg/rare.jpg")');
+    }else if (rareValue==2) {
+      rareValue = 2;
+      $("body").css('background-image','url("../img/gachabg/normal.jpg")');
+    }else{
+      $("body").css('background-image','url("../img/gachabg/normal.jpg")');
+    }
+  });
+  // -->
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/gachares.css">
+
+</head>
+<body>
+  <?php
+  makeLoader();
+  makeTopbar($conn,$userId);
+  ?>
+  <div class="card"><img src="../img/gachacards/<?=$rareValue?>.jpg" width=100%><br></div>
+  <h1 class="bshadow white">
+    <?php
+      for($i=0; $i<$rareValue; $i++){
+        print("★");
+      }
+      ?>
+  </h1>
+  <div class="bottombar">
+    <a class="buttongreen" href="index">　もう一度　</a>
+    <a class="button" href="../gachatop">　戻る　</a>
+  </div>
+</body>
+</html>

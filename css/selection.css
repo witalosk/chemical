@@ -1,0 +1,21 @@
+.checkbox {
+  display: none;
+}
+.checkbox + .checkbox-icon {
+  display: inline-block;
+}
+.checkbox:checked + .checkbox-icon{
+  background-color: rgba(82, 194, 231, 0.75);
+  border-radius: 20px;
+}
+
+.rb {
+  display: none;
+}
+.rb + .checkbox-icon {
+  display: inline-block;
+}
+.rb:checked + .checkbox-icon{
+  background-color: rgba(83, 217, 97, 0.75);
+  border-radius: 20px;
+}

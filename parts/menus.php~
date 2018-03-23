@@ -1,0 +1,89 @@
+<?php
+
+//上のバー作成用関数
+function makeTopbar($conn,$userId){
+  try {
+    $userId = $conn->escapeString($userId);
+    $res = $conn->query('SELECT * FROM user WHERE userId='.$userId);
+    $row = $res->fetchArray();
+  } catch (Exception $e) {
+    die($e);
+  }
+
+print <<< EOM
+<div class="topbar bounceInDown animated">
+  <div class="level frale">
+    {$row["level"]}
+  </div>
+  <div class="exp frale">
+    {$row["exp"]}
+  </div>
+  <div class="rank">
+    駆け出しの研究者：{$row["nickName"]}
+  </div>
+  <div class="coin frale">
+    {$row["coin"]}
+  </div>
+  <div class="mol frale">
+    42345
+  </div>
+</div>
+EOM;
+}
+
+//下のメニュー作成用関数、$pageに選択されているページ
+function makeMenu($page){
+  $b = array("","","","","","");
+  $b[$page-1] = "b";
+
+print <<< EOM
+<div class="bottombar">
+  <a href="info"><div id="ia1" class="black bottomitem fsize50"><img src="img/menu/info{$b[0]}.png" width="20"><br>お知らせ</div></a>
+  <a href="experiment"><div id="ia2" class="black bottomitem fsize50"><img src="img/menu/experiment{$b[1]}.png" width="20"><br>実験</div></a>
+  <a href="item"><div id="ia3" class="black bottomitem fsize50"><img src="img/menu/item{$b[2]}.png" width="20"><br>アイテム</div></a>
+  <a><div id="ia4" class="black bottomitem fsize50"><img src="img/menu/environ{$b[3]}.png" width="20"><br>道具</div></a>
+  <a><div id="ia5" class="black bottomitem fsize50"><img src="img/menu/collection{$b[4]}.png" width="20"><br>図鑑</div></a>
+  <a href="item"><div id="ia6" class="black bottomitem fsize50"><img src="img/menu/gacha{$b[5]}.png" width="20"><br>ガチャ</div></a>
+</div>
+EOM;
+}
+
+//ローディング画面作成用関数
+function makeLoader(){
+  $rand = rand(1,8);
+  switch($rand){
+    case 1:
+      $text = "読み込み中…";
+      break;
+    case 2:
+      $text = "道具は使うたびに、耐久値が減っていくぞ！";
+      break;
+    case 3:
+      $text = "図鑑コンプリートを目指そう！";
+      break;
+    case 4:
+      $text = "ガチャはコインで引けるぞ！";
+      break;
+    case 5;
+      $text = "連続ログインボーナスを狙おう！";
+      break;
+    case 6;
+      $text = "今日も実験びより！";
+      break;
+    case 7;
+      $text = "レアアイテムもガチャでゲットできるかも？";
+      break;
+    case 8;
+      $text = "図鑑で性質が詳しく見れるぞ！";
+      break;
+  }
+print <<< EOM
+  <div id="loader-bg">
+    <div id="loader">
+      <img src="img/loader.gif" width="80" height="80" alt="Now Loading..." />
+      <p>{$text}</p>
+    </div>
+  </div>
+EOM;
+}
+ ?>
