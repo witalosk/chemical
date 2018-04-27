@@ -476,7 +476,17 @@ div.window{
 	background-color: rgba(255, 255, 255, 0.83);
 	box-shadow: 0px 0px 20px 30px rgba(0,0,0,0.5);
 	visibility: hidden;
+	/*overflow-y: scroll;*/
+}
+
+.modalcontents {
+	position: fixed;
+	top:70px;
+	left:20px;
+	right:20px;
+	bottom: 20px;
 	overflow-y: scroll;
+	text-align: center;
 }
 
 /*loader*/

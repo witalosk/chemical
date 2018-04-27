@@ -30,7 +30,7 @@ class InvalidErrorException extends \Exception
         <nav class="default-primary-color primary-text-color uk-padding" uk-navbar>
           <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
-              <a class="text-primary-color" href="">gimon</a>
+              <a class="text-primary-color" href="">けみくえ！</a>
             </ul>
           </div>
           <div class="uk-navbar-center">

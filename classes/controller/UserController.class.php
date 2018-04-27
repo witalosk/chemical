@@ -121,6 +121,7 @@ class UserController extends ControllerBase
   {
     $objUm = new UserModel;
     $objUm->getModelByMailAddress($mailAddress);
+    var_dump($objUm);
 
     //データが見つからなかったり、パスワードが不一致の場合false
     if (null == $objUm->id || !password_verify($password, $objUm->password)) {
