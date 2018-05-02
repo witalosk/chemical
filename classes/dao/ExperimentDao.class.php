@@ -24,34 +24,33 @@ class ExperimentDao
    }
 
    /**
+    * 実験一覧をIdから取得する
+    */
+    static public function getDaoFromId($id)
+    {
+      $sql = "SELECT * FROM `experiment` WHERE `exId` = :id";
+      $array[':id'] = $id;
+      return Db::select($sql, $array);
+    }
+   /**
     * 指定されたBeforeの反応式を検索する
     * @param array 検索するアイテムidの配列
     */
-   static public function getDaoFromItemIds($ids)
+   static public function getDaoFromItemIds($ids, $env)
    {
      //引数がないとエラー
      if($ids == null) {
        throw new ApplicationErrorException(ExceptionCode::APPLICATION_ERR);
      }
+     $ids_t = $ids;
+     sort($ids_t);
 
-     $firstflag = 1;
      $array = [];
-
      //SQL作成
-     $sql = "SELECT * FROM `experiment` WHERE ";
-     foreach ($ids as $id) {
-       if($firstflag == 1) {
-         $sql .= "`exBefore like '%:id".$id."%'`";
-         $firstflag = 0;
-       }
-       else {
-         $sql .= " and `exBefore like '%:id".$id."%'`";
-       }
-       array_push($array, $id);
-     }
+     $sql = "SELECT * FROM `experiment` WHERE `exBefore` = :exb";
+     $array[':exb'] = implode(',', $ids_t);
 
-     print $sql;
-     var_dump($array);
+     return Db::select($sql, $array);
    }
 
 }

@@ -6,10 +6,11 @@
   </div>
   <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
   <div id=sellarea>アイテムを選んでください。</div><br>
-  <div id=sellbtnarea><div id="exp" class="button none">　　実験!　　</div></div>
+  <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
 </div>
+
 <a id="open" class="buttonsell buttongreen">実験!</a>
-<form id="itembox" action="experimenting.php" method="post">
+<form id="itembox" action="" method="post">
   <div class="itemInfo" id="iteminfo">
     アイテムと環境を選択<br>
     <select id="environ" name="environ">
@@ -24,7 +25,7 @@
     {foreach from=$items item=item}
     <div class="item">
       <label>
-        <input type="checkbox" class="rb" value="{$item[0]}" name="itemr" id="itemr" data-name="{$item[3]}">
+        <input type="checkbox" class="rb" value="{$item[0]}" name="itemr[]" id="itemr" data-name="{$item[3]}">
         <div class="checkbox-icon">
           <img src="{$item[1]}" width="100%" >
           <div class="itemNumber white">{$item[2]}</div>
@@ -42,7 +43,7 @@ $(function(){
   $("form").change(function(){
     stritems = "";
     environ = $('#environ option:selected').text();
-    var itemr = $("input[name=itemr]:checked");
+    var itemr = $("input[name='itemr[]']:checked");
     for(var i = 0 ; i < itemr.length ; i ++){
       if(itemr[i].checked == true){
         stritems = stritems + itemr[i].dataset.name + " ";
@@ -57,6 +58,11 @@ $(function(){
     else {
       $('#exp').css('display', 'block');
     }
+  });
+
+  //実験ボタンを押したとき
+  $('#exp').click(function(){
+    $('#itembox').submit();
   });
 
 });

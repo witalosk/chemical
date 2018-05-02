@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-04-28 15:36:42
+/* Smarty version 3.1.32-dev-35, created on 2018-05-02 23:18:12
   from 'C:\xampp\htdocs\chemical\view\templates\experiment\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ae4167a0752e4_57894624',
+  'unifunc' => 'content_5ae9c8a423dda9_91439704',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd010e7179d53792c302e7c9b77332be310410ce8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\experiment\\index.tpl',
-      1 => 1524897397,
+      1 => 1525270687,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ae4167a0752e4_57894624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ae9c8a423dda9_91439704 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -36,10 +36,11 @@ $_smarty_tpl->_subTemplateRender('file:../template/header.tpl', $_smarty_tpl->ca
   </div>
   <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
   <div id=sellarea>アイテムを選んでください。</div><br>
-  <div id=sellbtnarea><div id="exp" class="button none">　　実験!　　</div></div>
+  <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
 </div>
+
 <a id="open" class="buttonsell buttongreen">実験!</a>
-<form id="itembox" action="experimenting.php" method="post">
+<form id="itembox" action="" method="post">
   <div class="itemInfo" id="iteminfo">
     アイテムと環境を選択<br>
     <select id="environ" name="environ">
@@ -70,7 +71,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
     <div class="item">
       <label>
         <input type="checkbox" class="rb" value="<?php echo $_smarty_tpl->tpl_vars['item']->value[0];?>
-" name="itemr" id="itemr" data-name="<?php echo $_smarty_tpl->tpl_vars['item']->value[3];?>
+" name="itemr[]" id="itemr" data-name="<?php echo $_smarty_tpl->tpl_vars['item']->value[3];?>
 ">
         <div class="checkbox-icon">
           <img src="<?php echo $_smarty_tpl->tpl_vars['item']->value[1];?>
@@ -97,7 +98,7 @@ $(function(){
   $("form").change(function(){
     stritems = "";
     environ = $('#environ option:selected').text();
-    var itemr = $("input[name=itemr]:checked");
+    var itemr = $("input[name='itemr[]']:checked");
     for(var i = 0 ; i < itemr.length ; i ++){
       if(itemr[i].checked == true){
         stritems = stritems + itemr[i].dataset.name + " ";
@@ -112,6 +113,11 @@ $(function(){
     else {
       $('#exp').css('display', 'block');
     }
+  });
+
+  //実験ボタンを押したとき
+  $('#exp').click(function(){
+    $('#itembox').submit();
   });
 
 });

@@ -94,6 +94,9 @@ html {
 .bshadow{
 	text-shadow: 1px 1px 3px #000;
 }
+.wbshadow{
+	text-shadow: 1px 1px 3px #FFF;
+}
 .fsize120{
 	font-size: 120%;
 }

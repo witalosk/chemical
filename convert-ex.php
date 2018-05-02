@@ -6,16 +6,12 @@ $sql = "SELECT * FROM `experiment`";
 $result = Db::select($sql);
 
 foreach ($result as $item) {
-  $tempA = array();
-  $tempB = array();
-  for($i = 1; $i<=4; $i++) {
-    if($item["exB$i"] != "0") {
-      array_push($tempB, $item["exB$i"]);
-    }
-    if($item["exA$i"] != "0") {
-      array_push($tempA, $item["exA$i"]);
-    }
-  }
+  $tempA = explode(',', $item['exAfter']);
+  $tempB = explode(',', $item['exBefore']);
+
+  sort($tempA);
+  sort($tempB);
+
   $tempB = implode(",", $tempB);
   $tempA = implode(",", $tempA);
 
