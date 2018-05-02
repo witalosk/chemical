@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 19:09:52
+/* Smarty version 3.1.32-dev-35, created on 2018-04-28 15:04:59
   from 'C:\xampp\htdocs\chemical\view\templates\user\info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4d270b25782_67430879',
+  'unifunc' => 'content_5ae40f0b1ef215_11871872',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '63a1b607928e0f0216ee9531f413dbf74f2b9a11' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\user\\info.tpl',
-      1 => 1521799791,
+      1 => 1524895497,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ab4d270b25782_67430879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ae40f0b1ef215_11871872 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -51,12 +51,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
     </ul>
   </div>
   <p>
-    <a class="uk-button uk-button-secondary" href="logout">ログアウトする</a>
+    <a class="buttonblack" href="logout">ログアウトする</a>
   </p>
   <p>
     <form action="" method="post">
       <input type="hidden" name="h2" value="hey">
-      <input type="submit" class="uk-button uk-button-default" value="DEBUG +1000coin">
+      <input type="submit" class="button" value="DEBUG +1000coin">
     </form>
   </p>
   <br>

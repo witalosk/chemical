@@ -1,5 +1,6 @@
 <img src="{$picpath}" width=70%>
-<h1>No.{$id} {$name}</h1>
+<p>No.{$id}</p>
+<h1>{$name}</h1>
 <p>★{$reality}/5</p>
 <p>分子量: {$molWeight}</p>
 <p>{$color}</p>

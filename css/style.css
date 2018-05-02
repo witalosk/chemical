@@ -7,6 +7,17 @@
 	url('bokutachi.otf') format('opentype');
 }
 
+/* reset */
+button, input[type="submit"]{
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	outline: none;
+	appearance: none;
+}
+
 * {
 	-webkit-appearance: none;
 }
@@ -119,57 +130,67 @@ div.waitingbar{
 /*form*/
 .button {
 	display: inline-block;
-	text-align: center;
+	padding: 0.5em 1em;
 	text-decoration: none;
-	line-height: 54px;
-	outline: none;
-	border-style: solid;
-	border-radius: 20px;
-	border-color: white;
-	color: white;
-	padding: 5px;
-	background-color: rgba(0, 0, 0, 0.3);
+	background: #8a8a8a;/*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #7a7a7a;
+	border-radius: 3px;
+}
+.button:active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);/*下に動く*/
+	border-bottom: none;/*線を消す*/
 }
 .buttonblack {
 	display: inline-block;
-	text-align: center;
+	padding: 0.5em 1em;
 	text-decoration: none;
-	line-height: 54px;
-	outline: none;
-	border-style: solid;
-	border-radius: 5px;
-	border-color: black;
-	color: black;
-	padding: 5px;
-	background-color: rgba(256, 256, 256, 0.3);
+	background: #5a5a5a;/*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #4a4a4a;
+	border-radius: 3px;
+}
+.buttonblack:active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);/*下に動く*/
+	border-bottom: none;/*線を消す*/
 }
 .buttongreen {
 	display: inline-block;
-	text-align: center;
+	padding: 0.5em 1em;
 	text-decoration: none;
-	outline: none;
-	border-style: solid;
-	border-radius: 5px;
-	border-color: white;
-	background-color: rgb(9, 208, 142);
-	color: white;
-	padding: 15px;
-	cursor: pointer;
+	background: #66d88a;/*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #629572;
+	border-radius: 3px;
+}
+.buttongreen:active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);/*下に動く*/
+	border-bottom: none;/*線を消す*/
 }
 .buttonred {
 	display: inline-block;
-	text-align: center;
+	padding: 0.5em 1em;
 	text-decoration: none;
-	outline: none;
-	border-style: solid;
-	border-radius: 5px;
-	border-color: white;
-	background-color: rgb(232, 106, 106);
-	color: white;
-	padding: 15px;
-	cursor: pointer;
+	background: #d8668a;/*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #956272;
+	border-radius: 3px;
 }
 .buttonsell{
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background: #66d88a;/*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #629572;
+	border-radius: 3px;
+
 	position: fixed;
 	top: 95px;
 	right: 30px;
@@ -248,7 +269,7 @@ div.item{
 
 div.itemBox{
 	position: fixed;
-	top: 180px;
+	top: 150px;
 	bottom: 70px;
 	left: 10px;
 	right:10px;
@@ -285,7 +306,7 @@ div.itemNumber{
 
 div.itemInfo{
 	position: fixed;
-	top: 75px;
+	top: 55px;
 	left: 10px;
 	right:10px;
 	height: 80px;
@@ -311,17 +332,14 @@ div.inlineblock{
 
 /*topbar*/
 div.topbar {
-	background: white;
+	background: rgba(245,245,245,0.9);
 	position: fixed;
-	top:10px;
+	top:0px;
 	right: 10px;
 	left: 10px;
 	height: 40px;
-	border-style: solid;
-	border-color: rgba(236, 236, 236, 0.5);
-	border-width: medium;
-	border-radius: 5px;
 	text-align: left;
+	border-radius: 0px 0px 5px 5px;
 	padding: 5px;
 	z-index: 2;
 }

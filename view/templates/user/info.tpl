@@ -9,12 +9,12 @@
     </ul>
   </div>
   <p>
-    <a class="uk-button uk-button-secondary" href="logout">ログアウトする</a>
+    <a class="buttonblack" href="logout">ログアウトする</a>
   </p>
   <p>
     <form action="" method="post">
       <input type="hidden" name="h2" value="hey">
-      <input type="submit" class="uk-button uk-button-default" value="DEBUG +1000coin">
+      <input type="submit" class="button" value="DEBUG +1000coin">
     </form>
   </p>
   <br>
