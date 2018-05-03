@@ -50,6 +50,17 @@ class UserDao
     }
 
     /**
+     * coinOperate
+     */
+    static public function operateDao($userId, $strnum)
+    {
+      $sql = 'UPDATE `user` SET `coin` = (`coin` '.$strnum. ') WHERE `id` = :userId';
+      $arr[':userId'] = $userId;
+
+      return Db::update($sql, $arr);
+    }
+
+    /**
     * 更新する
     * @param UserModel $objUM
     * @return bool

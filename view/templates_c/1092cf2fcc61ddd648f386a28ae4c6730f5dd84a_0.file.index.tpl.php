@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 20:57:47
+/* Smarty version 3.1.32-dev-35, created on 2018-05-03 15:50:34
   from 'C:\xampp\htdocs\chemical\view\templates\item\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4ebbb3aa821_33326324',
+  'unifunc' => 'content_5aeab13a2910f5_72370297',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1092cf2fcc61ddd648f386a28ae4c6730f5dd84a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\item\\index.tpl',
-      1 => 1521806261,
+      1 => 1525330231,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ab4ebbb3aa821_33326324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aeab13a2910f5_72370297 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -99,7 +99,7 @@ $(function(){
 ');
         $("#sellarea").html(item[0].name + 'を何個売却しますか？<br>(１個' + item[0].price + 'コイン)');
         $("#sellbtnarea").html(
-          '<form action="sell" method="post">'
+          '<form action="/item/sell" method="post">'
           + '<input type="number" name="num" class="textmini" value=1 id="num" readonly="readonly">個'
           + '<br><br><a id="plus" class="minibutton" href="javascript:void(0);">▲</a>'
           + '<a id="minus" class="minibutton" href="javascript:void(0);">▼</a>'

@@ -5,8 +5,10 @@ use app\model\UserModel;
 use app\dao\ItemDao;
 use app\dao\HaveIDao;
 use app\dao\CollectionDao;
+use app\controller\UserController;
 use app\common\InvalidErrorException;
 use app\common\ExceptionCode;
+use app\common\Db;
 
 class ItemController extends ControllerBase
 {
@@ -79,6 +81,18 @@ class ItemController extends ControllerBase
     $this->view->assign('color',$color);
 
   }
+
+  public function sellAction()
+  {
+    $posts = $this->request->getPost();
+    $item = ItemController::getItemFromItemId($posts['itemId']);
+    Db::transaction();
+    ItemController::itemOperate($item['itemId'], '- '.$posts['num']);
+    UserController::coinOperate('+ '.$item['itemPrice'] * $posts['num']);
+    Db::commit();
+    header('Location: /item');
+  }
+
   /**
    * アイテムの個数を操作
    */

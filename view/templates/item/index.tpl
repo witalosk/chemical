@@ -55,7 +55,7 @@ $(function(){
         $("#sellimage").html('<img src="' + item[0].picture + '" width=80%>');
         $("#sellarea").html(item[0].name + 'を何個売却しますか？<br>(１個' + item[0].price + 'コイン)');
         $("#sellbtnarea").html(
-          '<form action="sell" method="post">'
+          '<form action="/item/sell" method="post">'
           + '<input type="number" name="num" class="textmini" value=1 id="num" readonly="readonly">個'
           + '<br><br><a id="plus" class="minibutton" href="javascript:void(0);">▲</a>'
           + '<a id="minus" class="minibutton" href="javascript:void(0);">▼</a>'

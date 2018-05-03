@@ -2,6 +2,7 @@
 
 namespace app\controller;
 
+use app\controller\ItemController;
 use \app\model\UserModel;
 use \app\dao\UserDao;
 use \app\model\GimonModel;
@@ -33,45 +34,6 @@ class UserController extends ControllerBase
   }
 
   /**
-  * データベースを更新・挿入
-  */
-  public function updateAction()
-  {
-    $user = $connection->get("account/verify_credentials");
-    $id = $user->id;
-
-    //データベースに存在しなければ登録、する場合ログイン
-    $objUM = new UserModel;
-    $objUM->getModelById($id);
-    if(null != $objUM->id)
-    {
-      //存在する場合
-      $objUM->name = $user->name;
-      $objUM->screen_name = $user->screen_name;
-      $objUM->updated_at = date('Y/m/d H:i:s');
-      Db::transaction();
-      $objUM->save();
-      Db::commit();
-    }
-    else
-    {
-      $objUM->id = $id;
-      $objUM->name = $user->name;
-      $objUM->screen_name = $user->screen_name;
-      $objUM->updated_at = date('Y/m/d H:i:s');
-      $objUM->created_at = date('Y/m/d H:i:s');
-      Db::transaction();
-      $objUM->register();
-      Db::commit();
-    }
-    $_SESSION[self::LOGINUSER] = $objUM;
-
-    //トップページにリダイレクト
-    header( 'location: '.WEB_URL.'user/main' );
-  }
-
-
-  /**
   * ログイン状態かどうかをチェックする
   *
   * @param str ログイン後のリダイレクト先のURL
@@ -97,6 +59,9 @@ class UserController extends ControllerBase
     }
   }
 
+
+
+
   /**
   * ログイン中のユーザーモデルを取得する
   *
@@ -105,6 +70,17 @@ class UserController extends ControllerBase
   static public function getLoginUser()
   {
     return $_SESSION[self::LOGINUSER];
+  }
+
+  /**
+   * コインを操作
+   */
+  static public function coinOperate($number)
+  {
+    $objUm = new UserModel;
+    $objUm = UserController::getLoginUser();
+    UserDao::operateDao($objUm->id, $number);
+    UserController::sessionUpdate();
   }
 
   /**
@@ -126,6 +102,16 @@ class UserController extends ControllerBase
     //見つかった場合、セッションに保存
     $_SESSION[self::LOGINUSER] = $objUm;
     return true;
+  }
+
+  static public function sessionUpdate()
+  {
+    $objUm = new UserModel;
+    $objUm = UserController::getLoginUser();
+    $objUm->getModelById($objUm->id);
+
+    //見つかった場合、セッションに保存
+    $_SESSION[self::LOGINUSER] = $objUm;
   }
 
   /**
