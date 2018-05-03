@@ -79,6 +79,16 @@ class ItemController extends ControllerBase
     $this->view->assign('color',$color);
 
   }
+  /**
+   * アイテムの個数を操作
+   */
+  static public function itemOperate($itemId, $number)
+  {
+    $objUm = new UserModel;
+    $objUm = UserController::getLoginUser();
+    HaveIDao::operateDao($objUm->id, $itemId, $number);
+  }
+
 
   static public function getAllItem()
   {

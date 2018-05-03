@@ -3,6 +3,7 @@ namespace app\controller;
 
 use \app\controller\UserController;
 use \app\controller\ItemController;
+use \app\controller\CollectionController;
 use \app\model\UserModel;
 use \app\model\ExperimentModel;
 use \app\dao\ExperimentDao;
@@ -20,6 +21,7 @@ class ExperimentController extends ControllerBase
    */
   public function indexAction()
   {
+
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();
 
@@ -30,7 +32,7 @@ class ExperimentController extends ControllerBase
     if(null == $posts) {
       //現在実験中のものがあるかチェックする
       $nowEx = ExperimentController::getExperimentingByUserId($objUm->id);
-      if(null == $nowEx) {
+      if(null == $nowEx->id) {
         //アイテムを取得して通常ページを生成
         $objUm = new UserModel;
         $objUm = UserController::getLoginUser();
@@ -61,6 +63,14 @@ class ExperimentController extends ControllerBase
         $endTime = strtotime($nowEx->startTime) + $ex[0]['exWaitTime'];
         if($endTime <= $now) {
           //実験完了画面を表示
+          $befores = explode(',', $ex[0]['exAfter']);
+          Db::transaction();
+          foreach ($befores as $before) {
+            ItemController::itemOperate($before, '+ 1');
+            CollectionController::resistCollection($before);
+          }
+          $nowEx->delete();
+          Db::commit();
           $this->templatePath = 'experiment/experiment_finished.tpl';
           $this->view->assign('exFormura', $ex[0]['exFormura']);
         }
@@ -89,7 +99,11 @@ class ExperimentController extends ControllerBase
         $objEm->userId = $objUm->id;
         $objEm->exId = $ex[0]['exId'];
         $objEm->startTime = date('Y/m/d H:i:s');
+        $befores = explode(',', $ex[0]['exBefore']);
         Db::transaction();
+        foreach ($befores as $before) {
+          ItemController::itemOperate($before, '- 1');
+        }
         $objEm->register();
         Db::commit();
         $this->templatePath = 'experiment/experimenting.tpl';
@@ -107,7 +121,7 @@ class ExperimentController extends ControllerBase
   static public function getExperimentingByUserId($id)
   {
     $array = ExperimentingDao::getDaoFromUserId($id);
-    $objEm = new ExperimentingModel($array[0]);
+    @$objEm = new ExperimentingModel($array[0]);
 
     return $objEm ;
   }

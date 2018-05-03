@@ -93,5 +93,16 @@ class ExperimentingDao
        return Db::insert($sql, $arr);
    }
 
+   /**
+    * 削除する
+    */
+   public static function delete(experimentingModel $objEm)
+   {
+     $sql = "DELETE FROM `experimenting` WHERE id = :id";
+     $arr[':id'] = $objEm->id;
+
+     return Db::delete($sql, $arr);
+   }
+
 
 }

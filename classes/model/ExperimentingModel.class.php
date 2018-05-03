@@ -62,5 +62,10 @@ class ExperimentingModel
       return ExperimentingDao::insert($this);
   }
 
+  public function delete()
+  {
+    return ExperimentingDao::delete($this);
+  }
+
 
 }

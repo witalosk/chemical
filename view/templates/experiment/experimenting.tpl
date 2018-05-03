@@ -40,11 +40,7 @@ $(function(){
     $("#timearea").text("　あと"+nokori+"秒　");
     setTimeout(repeat,1000);
     if(nokori<1){
-      var html = "<form method='post' action='experimentres' id='refresh' style='display: none;'>" +
-      "<input type='hidden' name='exid' value='"+ exid +"' >" +
-      "</form>";
-      $("body").append(html);
-      $("#refresh").submit();
+      window.location.href = "experiment";
     }
   }
 

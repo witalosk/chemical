@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-03 01:44:36
+/* Smarty version 3.1.32-dev-35, created on 2018-05-03 03:22:43
   from 'C:\xampp\htdocs\chemical\view\templates\experiment\experimenting.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ae9eaf4c2e000_69714323',
+  'unifunc' => 'content_5aea01f36f2618_82660335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd96c1fae250e666523edda9ed828a0cd31ea3f56' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\experiment\\experimenting.tpl',
-      1 => 1525279472,
+      1 => 1525285349,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ae9eaf4c2e000_69714323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aea01f36f2618_82660335 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -75,11 +75,7 @@ $(function(){
     $("#timearea").text("　あと"+nokori+"秒　");
     setTimeout(repeat,1000);
     if(nokori<1){
-      var html = "<form method='post' action='experimentres' id='refresh' style='display: none;'>" +
-      "<input type='hidden' name='exid' value='"+ exid +"' >" +
-      "</form>";
-      $("body").append(html);
-      $("#refresh").submit();
+      window.location.href = "experiment";
     }
   }
 

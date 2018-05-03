@@ -102,6 +102,16 @@ class CollectionController extends ControllerBase
 
   }
 
+  /**
+   * アイテムを図鑑に登録
+   */
+  static public function resistCollection($itemId)
+  {
+    $objUm = new UserModel;
+    $objUm = UserController::getLoginUser();
+    CollectionDao::collectionTrue($objUm->id, $itemId);
+  }
+
 
   static public function getAllItem()
   {

@@ -22,4 +22,14 @@ class CollectionDao
     return Db::select($sql, $arr);
   }
 
+  /**
+   * collectionTrue
+   */
+  static public function collectionTrue($userId, $itemId)
+  {
+    $sql = 'UPDATE `collection` SET `c'.$itemId.'` = 1 WHERE `userId` = :userId';
+    $arr[':userId'] = $userId;
+    return Db::update($sql, $arr);
+  }
+
 }
