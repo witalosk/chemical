@@ -386,7 +386,6 @@ div.coin{
 	right:5px;
 	top:3px;
 	padding-left: 30px;
-	background-color: white;
 	background-image: url("../img/coin.png");
 	background-size: 40%;
 	background-repeat: no-repeat;
@@ -399,7 +398,6 @@ div.mol{
 	right:5px;
 	bottom:3px;
 	padding-left: 19px;
-	background-color: white;
 	background-image: url("../img/mol.png");
 	background-size: 35%;
 	background-repeat: no-repeat;
