@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:15:39
-  from 'C:\xampp\htdocs\chemical\view\templates\gacha\rare.tpl' */
+/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:17:57
+  from 'C:\xampp\htdocs\chemical\view\templates\gacha\normal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5af0355bace8c2_65870800',
+  'unifunc' => 'content_5af035e59919b2_99166112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8b6657e2518dd03e64ba694bc66caf939aaa3f9d' => 
+    'f1700d279c014628168e9be681a7e1d2f6ecb1fb' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\gacha\\rare.tpl',
-      1 => 1525691738,
+      0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\gacha\\normal.tpl',
+      1 => 1525690882,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5af0355bace8c2_65870800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5af035e59919b2_99166112 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -37,7 +37,7 @@ echo $_smarty_tpl->tpl_vars['img']->value;?>
 <h1 id="name" class="bshadow white"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 </h1>
 <p class="bshadow white">をゲット！</p>
-<a href="/gacha/rare" class="buttongreen">もう1回レアガチャ</a>
+<a href="/gacha/normal" class="buttongreen">もう1回素材ガチャ</a>
 <a href="/gacha" class="buttonblack">やめる</a>
 
 <?php echo '<script'; ?>

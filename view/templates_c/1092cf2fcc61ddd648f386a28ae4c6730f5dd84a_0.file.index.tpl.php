@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-03 15:50:34
+/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:24:52
   from 'C:\xampp\htdocs\chemical\view\templates\item\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5aeab13a2910f5_72370297',
+  'unifunc' => 'content_5af037840138d9_76832815',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1092cf2fcc61ddd648f386a28ae4c6730f5dd84a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\item\\index.tpl',
-      1 => 1525330231,
+      1 => 1525692236,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5aeab13a2910f5_72370297 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5af037840138d9_76832815 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -34,7 +34,7 @@ $_smarty_tpl->_subTemplateRender('file:../template/header.tpl', $_smarty_tpl->ca
     <div id="close" class="modalclose">✕</div>
     アイテムを売る
   </div>
-  <article>
+  <article class="modalcontents">
     <div id="sellimage"></div>
     <div id=sellarea>アイテムを選択してください。</div>
     <div id=sellbtnarea></div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-02 23:18:12
+/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:24:40
   from 'C:\xampp\htdocs\chemical\view\templates\experiment\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ae9c8a423dda9_91439704',
+  'unifunc' => 'content_5af03778295cf5_46794314',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd010e7179d53792c302e7c9b77332be310410ce8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\experiment\\index.tpl',
-      1 => 1525270687,
+      1 => 1525692267,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ae9c8a423dda9_91439704 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5af03778295cf5_46794314 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -34,9 +34,11 @@ $_smarty_tpl->_subTemplateRender('file:../template/header.tpl', $_smarty_tpl->ca
     <div id="close" class="modalclose">✕</div>
     実験
   </div>
-  <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
-  <div id=sellarea>アイテムを選んでください。</div><br>
-  <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
+  <article class="modalcontents">
+    <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
+    <div id=sellarea>アイテムを選んでください。</div><br>
+    <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
+  </article>
 </div>
 
 <a id="open" class="buttonsell buttongreen">実験!</a>

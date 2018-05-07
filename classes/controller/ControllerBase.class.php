@@ -89,7 +89,7 @@ abstract class ControllerBase
     if($percentage>99){
       $classtext="化学マスター";
     }elseif ($percentage > 90) {
-      $classtext="マジ卍な研究者";
+      $classtext="マスター目前な研究者";
     }elseif ($percentage>50) {
       $classtext="そこそこの研究者";
     }elseif ($percentage>25) {

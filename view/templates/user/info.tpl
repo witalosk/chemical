@@ -11,11 +11,5 @@
   <p>
     <a class="buttonblack" href="logout">ログアウトする</a>
   </p>
-  <p>
-    <form action="" method="post">
-      <input type="hidden" name="h2" value="hey">
-      <input type="submit" class="button" value="DEBUG +1000coin">
-    </form>
-  </p>
   <br>
 {include file='../template/footer.tpl' b0="b" b1="" b2="" b3="" b4=""}

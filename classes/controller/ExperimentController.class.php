@@ -70,6 +70,7 @@ class ExperimentController extends ControllerBase
             CollectionController::resistCollection($before);
           }
           $nowEx->delete();
+          $objUm->addMessage('[実験完了!] '.$ex[0]['exFormura']);
           Db::commit();
           $this->templatePath = 'experiment/experiment_finished.tpl';
           $this->view->assign('exFormura', $ex[0]['exFormura']);

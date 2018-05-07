@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-03-23 17:53:34
+/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:56:31
   from 'C:\xampp\htdocs\chemical\view\templates\index\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5ab4c08e617fa8_76127911',
+  'unifunc' => 'content_5af03eefe8b1b6_28252501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '89f1e08f5ac97e68dfecc6cfa799a79a36aef394' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\index\\index.tpl',
-      1 => 1521791379,
+      1 => 1525694190,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ab4c08e617fa8_76127911 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5af03eefe8b1b6_28252501 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,8 +72,8 @@ function content_5ab4c08e617fa8_76127911 (Smarty_Internal_Template $_smarty_tpl)
         <p class="frale">パスワード</p>
         <p><input class="text" type="password" name="pass" required></p>
         <p>
-          <input class="uk-button uk-button-primary uk-button-large" type="submit" value="ログイン" name="login">
-          <a class="uk-button uk-button-secondary uk-button-large" href="signup.php">新規登録</a>
+          <input class="buttongreen fsize120" type="submit" value="ログイン" name="login">
+          <a class="buttonred" href="signup.php">新規登録</a>
         </p>
       </form>
     </div>
@@ -82,7 +82,7 @@ function content_5ab4c08e617fa8_76127911 (Smarty_Internal_Template $_smarty_tpl)
     <br>
     <br>
     <p>
-      <a id="open" href="#" class="uk-button uk-button-primary uk-button-large"><b>スタート！</b></a>
+      <a id="open" href="#" class="buttongreen"><b>スタート！</b></a>
     </p>
   </article>
 </body>

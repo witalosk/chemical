@@ -36,8 +36,8 @@
         <p class="frale">パスワード</p>
         <p><input class="text" type="password" name="pass" required></p>
         <p>
-          <input class="uk-button uk-button-primary uk-button-large" type="submit" value="ログイン" name="login">
-          <a class="uk-button uk-button-secondary uk-button-large" href="signup.php">新規登録</a>
+          <input class="buttongreen fsize120" type="submit" value="ログイン" name="login">
+          <a class="buttonred" href="signup.php">新規登録</a>
         </p>
       </form>
     </div>
@@ -46,7 +46,7 @@
     <br>
     <br>
     <p>
-      <a id="open" href="#" class="uk-button uk-button-primary uk-button-large"><b>スタート！</b></a>
+      <a id="open" href="#" class="buttongreen"><b>スタート！</b></a>
     </p>
   </article>
 </body>

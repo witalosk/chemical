@@ -3,7 +3,7 @@
 <img id="imgarea" src="{$WEB}{$img}" width="50%" class="animated fadeInDownBig">
 <h1 id="name" class="bshadow white">{$name}</h1>
 <p class="bshadow white">をゲット！</p>
-<a href="/gacha/rare" class="buttongreen">もう1回レアガチャ</a>
+<a href="/gacha/normal" class="buttongreen">もう1回素材ガチャ</a>
 <a href="/gacha" class="buttonblack">やめる</a>
 
 <script>

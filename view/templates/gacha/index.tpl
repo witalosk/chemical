@@ -7,8 +7,8 @@
 <br>
 <h1 class="bshadow white">素材ガチャ</h1>
 <img src="{$WEB}img/gachagacha2.png" alt="レアガチャ" width="50%"><br>
-<p class="bshadow white">★1のみが出現します。</p>
-<a href="gacha/sozaindex"><img src="{$WEB}img/sozaigacharu.png" alt="ガチャる" width="80%"></a>
+<p class="bshadow white">★1, ★2のみが出現します。</p>
+<a href="/gacha/normal"><img src="{$WEB}img/sozaigacharu.png" alt="ガチャる" width="80%"></a>
 <p class="white bshadow">※コインが足りない場合、<br>この画面に戻ります。</p>
 <p class="white bshadow fsize50">
 コインガチャはゲーム内コイン専用コンテンツです。<br>

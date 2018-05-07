@@ -72,9 +72,9 @@ class UserDao
         $sql .= "`password`= :password, ";
         $sql .= "`nickName`= :nickName, ";
         $sql .= "`coin`= :coin, ";
-        $sql .= "`level`= :level ";
-        $sql .= "`exp`= :exp ";
-        $sql .= "`loginTimes`= :loginTimes ";
+        $sql .= "`level`= :level, ";
+        $sql .= "`exp`= :exp, ";
+        $sql .= "`loginTimes`= :loginTimes, ";
         $sql .= "`lastLogin`= :lastLogin ";
         $sql .= "WHERE `id` = :id ";
 
@@ -88,7 +88,6 @@ class UserDao
         $arr[':loginTimes'] = $objUM->loginTimes;
         $arr[':lastLogin'] = $objUM->lastLogin;
         $arr[':id'] = $objUM->id;
-
         return Db::update($sql, $arr);
     }
 

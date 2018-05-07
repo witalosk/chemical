@@ -4,9 +4,11 @@
     <div id="close" class="modalclose">✕</div>
     実験
   </div>
-  <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
-  <div id=sellarea>アイテムを選んでください。</div><br>
-  <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
+  <article class="modalcontents">
+    <div id="sellimage"><img src="img/kenkyu_woman.png" width=80% alt="実験"></div>
+    <div id=sellarea>アイテムを選んでください。</div><br>
+    <div id=sellbtnarea><a id="exp" class="buttongreen none">実験!</a></div>
+  </article>
 </div>
 
 <a id="open" class="buttonsell buttongreen">実験!</a>

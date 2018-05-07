@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-04 23:17:16
+/* Smarty version 3.1.32-dev-35, created on 2018-05-07 20:18:18
   from 'C:\xampp\htdocs\chemical\view\templates\gacha\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5aec6b6c0b4c26_00197881',
+  'unifunc' => 'content_5af035fa224903_04614063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b7224b8077f3131057f07dc71bdd1938a6dbba48' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\gacha\\index.tpl',
-      1 => 1525443307,
+      1 => 1525691890,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5aec6b6c0b4c26_00197881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5af035fa224903_04614063 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -40,8 +40,8 @@ img/gacharu.png" alt="ガチャる" width="80%"></a>
 <h1 class="bshadow white">素材ガチャ</h1>
 <img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 img/gachagacha2.png" alt="レアガチャ" width="50%"><br>
-<p class="bshadow white">★1のみが出現します。</p>
-<a href="gacha/sozaindex"><img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
+<p class="bshadow white">★1, ★2のみが出現します。</p>
+<a href="/gacha/normal"><img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 img/sozaigacharu.png" alt="ガチャる" width="80%"></a>
 <p class="white bshadow">※コインが足りない場合、<br>この画面に戻ります。</p>
 <p class="white bshadow fsize50">

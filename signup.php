@@ -1,4 +1,6 @@
 <?php
+require 'common.php';
+
 //セッション開始
 session_start();
 
@@ -26,7 +28,7 @@ if (isset($_POST["signup"])) {
     $nickname = $_POST["nickname"];
 
     // 認証する
-    $pdo = new PDO('sqlite:game.db');
+    $pdo = new PDO(sprintf(DSN, DBNAME), DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
@@ -45,7 +47,7 @@ if (isset($_POST["signup"])) {
           $stmt->execute(array($userid));
           $stmt = $pdo->prepare("INSERT INTO collection(userId) VALUES (?)");
           $stmt->execute(array($userid));
-          $SignUpMessage = '登録が完了しました。<br>あなたの登録メールアドレスは '. $mail. ' です。<br>パスワードは '. $password. ' です。<br><a class="buttongreen" href="index.php">ログイン</a>';  // ログイン時に使用するメールアドレスとパスワード
+          $SignUpMessage = '登録が完了しました。<br>あなたの登録メールアドレスは '. $mail. ' です。<br><a class="buttongreen" href="/">トップヘ</a>';  // ログイン時に使用するメールアドレスとパスワード
         } catch (PDOException $e) {
           $errorMessage = $e->getMessage();
           // $e->getMessage() でエラー内容を参照可能（デバック時のみ表示）
@@ -85,7 +87,7 @@ if (isset($_POST["signup"])) {
   </div>
   <div class="modalbar">
     <div class="modalclose">
-      <a href="login.php">←</a>
+      <a href="/">＜</a>
     </div>
     新規登録
   </div>

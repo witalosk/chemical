@@ -4,7 +4,7 @@
     <div id="close" class="modalclose">✕</div>
     アイテムを売る
   </div>
-  <article>
+  <article class="modalcontents">
     <div id="sellimage"></div>
     <div id=sellarea>アイテムを選択してください。</div>
     <div id=sellbtnarea></div>

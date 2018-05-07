@@ -27,6 +27,29 @@ class UserController extends ControllerBase
     $objUm = new UserModel;
     $objUm = $this::getLoginUser();
 
+    //ログインボーナス
+    if($objUm->lastLogin != date('Ymd')) {
+      if ($objUm->loginTimes < 8) {
+        $coin = $objUm->loginTimes%7*100 + 1000;
+        $this->templatePath = 'user/startloginbonus.tpl';
+      }
+      else {
+        $coin = $objUm->loginTimes%7*100 + 100;
+        $this->templatePath = 'user/loginbonus.tpl';
+      }
+      Db::transaction();
+      UserController::coinOperate('+ '.$coin);
+      $objUm->addMessage("[ログインボーナス] ".$coin."コインゲット!");
+      $objUm->loginTimes++;
+      $objUm->lastLogin = date('Ymd');
+      $objUm->save();
+      UserController::sessionUpdate();
+      Db::commit();
+
+      $this->view->assign('coin', $coin);
+      $this->view->assign('logintimes', $objUm->loginTimes);
+    }
+
     //メッセージを取得
     $msgs = $objUm->getMessage();
 
@@ -121,10 +144,6 @@ class UserController extends ControllerBase
   */
   static public function logoutAction()
   {
-    $access_token = $_SESSION['access_token'];
-    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-    $result = $connection->post("account/end_session");
-
     $_SESSION = [];
     session_destroy();
     header('Location: '.WEB_URL);

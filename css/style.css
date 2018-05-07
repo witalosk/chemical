@@ -98,7 +98,7 @@ html {
 	text-shadow: 1px 1px 3px #FFF;
 }
 .fsize120{
-	font-size: 120%;
+	font-size: 110%;
 }
 .fsize70{
 	font-size: 70%;
@@ -146,6 +146,10 @@ div.waitingbar{
 	transform: translateY(4px);/*下に動く*/
 	border-bottom: none;/*線を消す*/
 }
+.button:hover {
+	text-decoration: none;
+	color: #fff;
+}
 .buttonblack {
 	display: inline-block;
 	padding: 0.5em 1em;
@@ -160,6 +164,10 @@ div.waitingbar{
 	-webkit-transform: translateY(4px);
 	transform: translateY(4px);/*下に動く*/
 	border-bottom: none;/*線を消す*/
+}
+.buttonblack:hover {
+	text-decoration: none;
+	color: #fff;
 }
 .buttongreen {
 	display: inline-block;
@@ -176,6 +184,10 @@ div.waitingbar{
 	transform: translateY(4px);/*下に動く*/
 	border-bottom: none;/*線を消す*/
 }
+.buttongreen:hover {
+	text-decoration: none;
+	color: #fff;
+}
 .buttonred {
 	display: inline-block;
 	padding: 0.5em 1em;
@@ -184,6 +196,16 @@ div.waitingbar{
 	color: #FFF;
 	border-bottom: solid 4px #956272;
 	border-radius: 3px;
+}
+.buttonred:active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);/*下に動く*/
+	border-bottom: none;/*線を消す*/
+}
+.buttonred:hover {
+	text-decoration: none;
+	color: #fff;
 }
 .buttonsell{
 	display: inline-block;

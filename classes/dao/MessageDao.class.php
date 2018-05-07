@@ -22,4 +22,22 @@ class MessageDao
     return Db::select($sql, $arr);
   }
 
+  static public function addMessageDao($userid, $date, $msg)
+  {
+    $sql = "INSERT INTO `message` VALUES (";
+    $sql .= " :id ";
+    $sql .= ", :userid ";
+    $sql .= ", :mesdate ";
+    $sql .= ", :mestext ";
+    $sql .= ")";
+
+    $arr = array();
+    $arr[':id'] = null;
+    $arr[':userid'] = $userid;
+    $arr[':mesdate'] = $date;
+    $arr[':mestext'] = $msg;
+
+    return Db::insert($sql, $arr);
+  }
+
 }
