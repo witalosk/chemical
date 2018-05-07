@@ -114,6 +114,11 @@ class ItemController extends ControllerBase
     return ItemDao::getDaoFromItemId($id)[0];
   }
 
+  static public function getItemFromRare($rare)
+  {
+    return ItemDao::getDaoFromRare($rare);
+  }
+
   static public function getHaveIFromUserId($id)
   {
     return HaveIDao::getDaoFromUserId($id)[0];

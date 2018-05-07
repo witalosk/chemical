@@ -34,4 +34,17 @@ class ItemDao
     return Db::select($sql, $arr);
   }
 
+  /**
+   * Itemテーブルをレアリティから検索
+   * @var int
+   * @return array
+   */
+  static public function getDaoFromRare($rare)
+  {
+    $sql = 'SELECT * FROM item WHERE itemReality=:rare';
+    $arr[':rare'] = $rare;
+
+    return Db::select($sql, $arr);
+  }
+
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-35, created on 2018-05-03 16:51:56
+/* Smarty version 3.1.32-dev-35, created on 2018-05-04 23:17:16
   from 'C:\xampp\htdocs\chemical\view\templates\gacha\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-35',
-  'unifunc' => 'content_5aeabf9c5d2264_85758710',
+  'unifunc' => 'content_5aec6b6c0b4c26_00197881',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b7224b8077f3131057f07dc71bdd1938a6dbba48' => 
     array (
       0 => 'C:\\xampp\\htdocs\\chemical\\view\\templates\\gacha\\index.tpl',
-      1 => 1525333906,
+      1 => 1525443307,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../template/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5aeabf9c5d2264_85758710 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aec6b6c0b4c26_00197881 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['WEB']->value;
 $_prefixVariable1 = ob_get_clean();
@@ -33,7 +33,7 @@ $_smarty_tpl->_subTemplateRender('file:../template/header.tpl', $_smarty_tpl->ca
 <img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 img/gachagacha.png" alt="レアガチャ" width="50%"><br>
 <p class="bshadow white">★1から★5までが出現します。</p>
-<a href="gacha/"><img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
+<a href="/gacha/rare"><img src="<?php echo $_smarty_tpl->tpl_vars['WEB']->value;?>
 img/gacharu.png" alt="ガチャる" width="80%"></a>
 <p class="white bshadow">※コインが足りない場合、<br>この画面に戻ります。</p>
 <br>
@@ -53,8 +53,7 @@ img/sozaigacharu.png" alt="ガチャる" width="80%"></a>
 アイテムの一部や色が正しく表示されない場合があります。
 </p>
 <br>
-
-<?php $_smarty_tpl->_subTemplateRender('file:../template/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('b0'=>'','b1'=>"b",'b2'=>'','b3'=>'','b4'=>''), 0, false);
+<?php $_smarty_tpl->_subTemplateRender('file:../template/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('b0'=>'','b1'=>'','b2'=>'','b3'=>'','b4'=>"b"), 0, false);
 ?>
 
 <?php }
