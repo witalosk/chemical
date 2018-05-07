@@ -24,6 +24,8 @@ class CollectionController extends ControllerBase
    */
   public function indexAction()
   {
+    UserController::checkLogin();
+
     //ログインユーザの取得
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();

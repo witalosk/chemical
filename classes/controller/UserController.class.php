@@ -24,6 +24,7 @@ class UserController extends ControllerBase
 
   public function infoAction()
   {
+    UserController::checkLogin();
     $objUm = new UserModel;
     $objUm = $this::getLoginUser();
 
@@ -65,8 +66,8 @@ class UserController extends ControllerBase
   */
   static public function checkLogin($redirectURL = '', $redirect = true)
   {
-    $token = (isset($_SESSION['access_token'])) ?
-    $_SESSION['access_token'] : null;
+    $token = (isset($_SESSION[self::LOGINUSER])) ?
+    $_SESSION[self::LOGINUSER] : null;
 
     if(isset($token))
     {

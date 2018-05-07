@@ -9,15 +9,16 @@ use app\controller\UserController;
 use app\controller\CollectionController;
 
 
-class gachaController extends ControllerBase
+class GachaController extends ControllerBase
 {
   public function indexAction()
   {
-
+    UserController::checkLogin();
   }
 
   public function rareAction()
   {
+    UserController::checkLogin();
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();
     if($objUm->coin < 250) {
@@ -56,6 +57,7 @@ class gachaController extends ControllerBase
 
   public function normalAction()
   {
+    UserController::checkLogin();
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();
     if($objUm->coin < 100) {

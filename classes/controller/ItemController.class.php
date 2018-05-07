@@ -14,6 +14,7 @@ class ItemController extends ControllerBase
 {
   public function indexAction()
   {
+    UserController::checkLogin();
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();
     $haveI = $this::getHaveIFromUserId($objUm->id);

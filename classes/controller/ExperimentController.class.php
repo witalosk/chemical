@@ -21,6 +21,7 @@ class ExperimentController extends ControllerBase
    */
   public function indexAction()
   {
+    UserController::checkLogin();
 
     $objUm = new UserModel;
     $objUm = UserController::getLoginUser();
