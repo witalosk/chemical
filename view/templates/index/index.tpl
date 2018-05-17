@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/uikit.min.css">
-
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
   <article>

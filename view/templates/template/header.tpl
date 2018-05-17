@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="{$WEB}css/style.css">
   <link rel="stylesheet" href="{$WEB}css/animate.css">
   <link rel="stylesheet" href="{$WEB}css/selection.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
   <article>
