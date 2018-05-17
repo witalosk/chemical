@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0">
   <meta name="format-detection" content="telephone=no">
-  <title>Chemiquest</title>
+  <title>けみくえ!</title>
   <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trnk/html5.js"></script>
   <![endif]-->
